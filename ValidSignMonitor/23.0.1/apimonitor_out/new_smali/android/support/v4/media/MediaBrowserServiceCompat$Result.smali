@@ -1,0 +1,93 @@
+.class public Landroid/support/v4/media/MediaBrowserServiceCompat$Result;
+.super Ljava/lang/Object;
+.source "MediaBrowserServiceCompat.java"
+.field private mDebug:Ljava/lang/Object;
+.field private mDetachCalled:Z
+.field private mSendResultCalled:Z
+.field final synthetic this$0:Landroid/support/v4/media/MediaBrowserServiceCompat;
+.method constructor <init>(Landroid/support/v4/media/MediaBrowserServiceCompat;Ljava/lang/Object;)V
+.registers 3
+iput-object p1, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->this$0:Landroid/support/v4/media/MediaBrowserServiceCompat;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+iput-object p2, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mDebug:Ljava/lang/Object;
+return-void
+.end method
+.method public detach()V
+.registers 4
+iget-boolean v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mDetachCalled:Z
+if-eqz v0, :cond_1f
+new-instance v0, Ljava/lang/IllegalStateException;
+new-instance v1, Ljava/lang/StringBuilder;
+invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+const-string v2, "detach() called when detach() had already been called for: "
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+move-result-object v1
+iget-object v2, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mDebug:Ljava/lang/Object;
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+move-result-object v1
+invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v1
+invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v0
+:cond_1f
+iget-boolean v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mSendResultCalled:Z
+if-eqz v0, :cond_3e
+new-instance v0, Ljava/lang/IllegalStateException;
+new-instance v1, Ljava/lang/StringBuilder;
+invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+const-string v2, "detach() called when sendResult() had already been called for: "
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+move-result-object v1
+iget-object v2, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mDebug:Ljava/lang/Object;
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+move-result-object v1
+invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v1
+invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v0
+:cond_3e
+const/4 v0, 0x1
+iput-boolean v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mDetachCalled:Z
+return-void
+.end method
+.method  isDone()Z
+.registers 2
+iget-boolean v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mDetachCalled:Z
+if-nez v0, :cond_8
+iget-boolean v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mSendResultCalled:Z
+if-eqz v0, :cond_a
+:cond_8
+const/4 v0, 0x1
+:goto_9
+return v0
+:cond_a
+const/4 v0, 0x0
+goto :goto_9
+.end method
+.method  onResultSent(Ljava/lang/Object;)V
+.registers 2
+return-void
+.end method
+.method public sendResult(Ljava/lang/Object;)V
+.registers 5
+iget-boolean v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mSendResultCalled:Z
+if-eqz v0, :cond_1f
+new-instance v0, Ljava/lang/IllegalStateException;
+new-instance v1, Ljava/lang/StringBuilder;
+invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+const-string v2, "sendResult() called twice for: "
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+move-result-object v1
+iget-object v2, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mDebug:Ljava/lang/Object;
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+move-result-object v1
+invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v1
+invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v0
+:cond_1f
+const/4 v0, 0x1
+iput-boolean v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->mSendResultCalled:Z
+invoke-virtual {p0, p1}, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->onResultSent(Ljava/lang/Object;)V
+return-void
+.end method

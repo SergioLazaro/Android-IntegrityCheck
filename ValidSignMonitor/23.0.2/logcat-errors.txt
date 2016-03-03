@@ -1,0 +1,31 @@
+D/AndroidRuntime(10838): >>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<
+D/AndroidRuntime(10838): CheckJNI is OFF
+D/AndroidRuntime(10838): Calling main entry com.android.commands.pm.Pm
+D/Finsky  (10364): [1] PackageVerificationReceiver.onReceive: Verification requested, id = 74
+D/Finsky  (10364): [1] WorkerTask.onPreExecute: Verification Requested for id = 74, data=file:///data/local/tmp/app-monitor-signature-aligned.apk flags=112 fromVerificationActivity=false
+D/Finsky  (10364): [1] PackageVerificationService$1.onResponse: Verification id=74 response=0
+D/DefContainer(10587): Copying /data/local/tmp/app-monitor-signature-aligned.apk to base.apk
+D/Finsky  (10364): [1] PackageVerificationReceiver.onReceive: Verification requested, id = 74
+D/PackageManager(  813): Renaming /data/app/vmdl1101924285.tmp to /data/app/com.example.sergio.zeroapp-1
+I/art     (  813): DexFile_isDexOptNeeded failed to open oat file '/data/dalvik-cache/arm/data@app@com.example.sergio.zeroapp-1@base.apk@classes.dex' for file location '/data/app/com.example.sergio.zeroapp-1/base.apk': Failed to open oat filename for reading: No such file or directory
+I/art     (  813): DexFile_isDexOptNeeded failed to open oat file '/data/app/com.example.sergio.zeroapp-1/arm/base.odex' for file location '/data/app/com.example.sergio.zeroapp-1/base.apk': Failed to open oat filename for reading: No such file or directory
+I/PackageManager(  813): Running dexopt on: /data/app/com.example.sergio.zeroapp-1/base.apk pkg=com.example.sergio.zeroapp isa=arm vmSafeMode=false
+I/dex2oat (10854): /system/bin/dex2oat --zip-fd=6 --zip-location=/data/app/com.example.sergio.zeroapp-1/base.apk --oat-fd=7 --oat-location=/data/dalvik-cache/arm/data@app@com.example.sergio.zeroapp-1@base.apk@classes.dex --instruction-set=arm --instruction-set-features=default --runtime-arg -Xms64m --runtime-arg -Xmx512m
+E/dex2oat (10854): Failed to open dex from file descriptor for zip file '/data/app/com.example.sergio.zeroapp-1/base.apk': Failed to open dex file '/data/app/com.example.sergio.zeroapp-1/base.apk' from memory: Unrecognized version number in /data/app/com.example.sergio.zeroapp-1/base.apk: 0 3 6 
+I/dex2oat (10854): dex2oat took 245.294ms (threads: 4)
+E/installd(  313): DexInv: --- END '/data/app/com.example.sergio.zeroapp-1/base.apk' --- status=0x0100, process failed
+W/PackageManager(  813): Package couldn't be installed in /data/app/com.example.sergio.zeroapp-1
+W/PackageManager(  813): com.android.server.pm.PackageManagerException: scanPackageLI
+W/PackageManager(  813): 	at com.android.server.pm.PackageManagerService.scanPackageDirtyLI(PackageManagerService.java:6029)
+W/PackageManager(  813): 	at com.android.server.pm.PackageManagerService.scanPackageLI(PackageManagerService.java:5363)
+W/PackageManager(  813): 	at com.android.server.pm.PackageManagerService.installNewPackageLI(PackageManagerService.java:10307)
+W/PackageManager(  813): 	at com.android.server.pm.PackageManagerService.installPackageLI(PackageManagerService.java:10852)
+W/PackageManager(  813): 	at com.android.server.pm.PackageManagerService.access$2500(PackageManagerService.java:251)
+W/PackageManager(  813): 	at com.android.server.pm.PackageManagerService$6.run(PackageManagerService.java:8674)
+W/PackageManager(  813): 	at android.os.Handler.handleCallback(Handler.java:739)
+W/PackageManager(  813): 	at android.os.Handler.dispatchMessage(Handler.java:95)
+W/PackageManager(  813): 	at android.os.Looper.loop(Looper.java:135)
+W/PackageManager(  813): 	at android.os.HandlerThread.run(HandlerThread.java:61)
+W/PackageManager(  813): 	at com.android.server.ServiceThread.run(ServiceThread.java:46)
+I/art     (  813): Explicit concurrent mark sweep GC freed 77724(3MB) AllocSpace objects, 34(1229KB) LOS objects, 33% free, 25MB/38MB, paused 2.122ms total 168.667ms
+D/AndroidRuntime(10838): Shutting down VM
