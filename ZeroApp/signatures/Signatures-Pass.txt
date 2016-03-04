@@ -1,0 +1,9 @@
+my-release-key.keystore
+alias: AndroidApps
+password: my-release
+
+=========================
+
+second-key.keystore
+alias: second-key
+password: second-key
